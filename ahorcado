@@ -1,0 +1,23 @@
+import random
+
+lista_palabras = ["MUERTE", "ASESINATO", "HOMICIDIO", "MASACRE", "CRIMEN", "EXTERMINACION"]
+
+palabra = random.choice(lista_palabras)
+print("La palabra tiene", len(palabra), "letras")
+raya = "_ " * len(palabra)
+print(raya)
+
+letra = input("\nIntroduce una letra: ")
+
+adivinado = False
+
+for letra_palabra in palabra:
+    if letra_palabra == letra.upper():
+        adivinado = True
+        raya = raya.replace("_ ", letra_palabra, 1)
+        print("Muy bien, has acertado la letra!!")
+
+if not adivinado:
+    print("Esa letra no está en la palabra.")
+
+print(raya)
